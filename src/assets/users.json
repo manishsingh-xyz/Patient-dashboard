@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Harshaaa Vardhan",
+        "address": "sector 1",
+        "clinic": "A Clinic"
+    },
+    {
+        "name": "Manish Singh",
+        "address": "sector 2",
+        "clinic": "B Clinic"
+    },
+    {
+        "name": "John wick",
+        "address": "sector 3",
+        "clinic": "C Clinic"
+    },
+    {
+        "name": "John Cena",
+        "address": "sector 4",
+        "clinic": "D Clinic"
+    },
+    {
+        "name": "Jon Snow",
+        "address": "sector 5",
+        "clinic": "E Clinic"
+    },
+    {
+        "name": "Robb Stark",
+        "address": "sector 6",
+        "clinic": "F Clinic"
+    }
+]
