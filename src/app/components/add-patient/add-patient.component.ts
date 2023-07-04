@@ -22,11 +22,9 @@ export class AddPatientComponent implements OnInit {
   patientName: string;
   patientAddress: string;
   patientClinic: string;
-  error: string;
   autoClose = false;
-  lastkeydown1 = 0;
   buttonDisabled = false;
-  @Input() item;
+  @Input() item: any;
   @Output() modalCloseEvent = new EventEmitter<boolean>();
   @ViewChild('closeAddPatientModal') closeAddExpenseModal: ElementRef;
 
@@ -71,7 +69,7 @@ export class AddPatientComponent implements OnInit {
 
   deletePatient(): void {
     this.store.dispatch(
-      new UserActions.DeleteUser(this.item.selectedPatient.id)
+      new UserActions.DeleteUser(this.item.selectedPatient)
     );
   }
 

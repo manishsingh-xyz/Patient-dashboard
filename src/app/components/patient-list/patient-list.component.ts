@@ -52,11 +52,11 @@ export class PatientListComponent implements OnInit {
     };
   }
 
-  openDeletePatient(patient: IPatient): void {
+  openDeletePatient(id: number): void {
     this.openModal = true;
     this.currentItem = {
       selectedAction: 2,
-      selectedPatient: patient,
+      selectedPatient: id,
       closePopup: false,
     };
   }

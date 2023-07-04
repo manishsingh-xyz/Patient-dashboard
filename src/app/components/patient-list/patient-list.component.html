@@ -34,11 +34,11 @@
                         <td><a class="anchor" data-toggle="modal" data-target="#exampleModal"  (click)="openViewPatient(user)">{{ user.name }}</a></td>
                         <td>{{ user.address }}</td>
                         <td>{{ user.clinic }}</td>
-                        <td>
+                        <!-- <td>
                             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal"  (click)="openViewPatient(user)">View</button>
-                        </td>
+                        </td> -->
                         <td>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" (click)="openDeletePatient(user)">Delete</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" (click)="openDeletePatient(user.id)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
