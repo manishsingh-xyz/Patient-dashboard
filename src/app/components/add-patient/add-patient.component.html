@@ -28,20 +28,23 @@
                     </div>
                     <div class="mb-3">
                         <label for="clinic" class="col-form-label">Associated Clinic:</label>
-                        <input type="text" class="form-control" required [(ngModel)]="patientClinic" name="clinic"
-                            id="clinicIds" #clinic="ngModel" list="patientClinicNames" />
-                        <datalist id="patientClinicNames">
-                            <option>A Clinic</option>
-                            <option>B Clinic</option>
-                            <option>C Clinic</option>
-                            <option>D Clinic</option>
-                            <option>E Clinic</option>
-                            <option>F Clinic</option>
-                            <option>G Clinic</option>
-                            <option>H Clinic</option>
-                        </datalist>
-                        <!-- <input type="text" class="form-control" required [(ngModel)]="patientClinic" name="clinic"
-                            id="clinic" #clinic="ngModel" /> -->
+
+                        <div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" required type="text" [(ngModel)]="patientClinic"
+                                        (keyup)="suggest()" name="clinic" id="clinicIds" #clinic="ngModel" />
+                                </div>
+                            </div>
+                            <div class="search-result" *ngIf="suggestions.length && flag">
+                                <ul>
+                                    <li *ngFor="let s of suggestions">
+                                        <a (click)="onselectClient(s)">{{ s }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div [hidden]="clinic.valid || clinic.pristine" class="alert alert-danger">
                             Clinic is required
                         </div>

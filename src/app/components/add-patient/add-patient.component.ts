@@ -19,11 +19,14 @@ import * as fromUser from '../../store/selectors/user.selectors';
 export class AddPatientComponent implements OnInit {
   selected = 0;
   popupHeading = '';
-  patientName: string;
-  patientAddress: string;
-  patientClinic: string;
+  patientName: string = '';
+  patientAddress: string = '';
+  patientClinic: string = '';
   autoClose = false;
   buttonDisabled = false;
+  clinics = ['general clinic', 'clove clinic', 'dental clinic', 'ent clinic', 'ortho clinic', 'derma clinic'];
+  suggestions: string[] = [];
+  flag = true;
   @Input() item: any;
   @Output() modalCloseEvent = new EventEmitter<boolean>();
   @ViewChild('closeAddPatientModal') closeAddExpenseModal: ElementRef;
@@ -49,6 +52,23 @@ export class AddPatientComponent implements OnInit {
       this.popupHeading = 'View Patient';
       this.selected = 3;
     }
+  }
+
+  suggest(): void {
+    this.flag = true; 
+    this.suggestions = this.clinics
+      .filter(c => c.startsWith((this.patientClinic).toLowerCase()))
+      .slice(0, 5);
+  }
+
+  onselectClient(clinic) {     
+    if (!!clinic) {  
+      this.patientClinic = clinic; 
+      this.flag = false;
+    }  
+    else {  
+      return false;  
+    }  
   }
 
   onSubmit(): void {

@@ -1,0 +1,27 @@
+li {
+  transition-duration: 0.5s;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: var(--mat-option-label-text-color);
+  font-family: var(--mat-option-label-text-font);
+  line-height: var(--mat-option-label-text-line-height);
+  font-size: var(--mat-option-label-text-size);
+  letter-spacing: var(--mat-option-label-text-tracking);
+  font-weight: var(--mat-option-label-text-weight);
+  min-height: 48px;
+}
+
+li:hover {
+  cursor: pointer;
+}
